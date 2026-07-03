@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bday website</title>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+    <style>
+        body {
+            background-color: rgb(0, 53, 106, 0.75);
+        }
+        h1, h2 {
+            color: rgb(0, 53, 106);
+            text-shadow: 0 5px 10px rgb(0, 53, 106);
+            text-align: center;
+            margin: 2%;
+        }
+        button {
+            margin: 0 35%;
+            text-align: center;
+            width: 25%;
+            height: 50px;
+            border-radius: 30px;
+            border: none;
+            box-shadow: 0 5px 15px rgb(0, 53, 106);
+            transition: transform 1.2s;
+        }
+        button:hover {
+            transform: scale(1.25);
+            color: rgb(0, 53, 106);
+        }
+        div{
+            margin-top: 2%;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome on your bday website!</h1>
+    <h2>Another surprise for you ⬇</h2>
+    <button onclick="play()">Open Present</button>
+    <div style="text-align:center">
+        <video width="70%" id="video">
+            <source src="Rick Astley - Never Gonna Give You Up (Official Music Video).mp4" type="video/mp4">
+            Your browser does not support HTML video.
+        </video>
+    </div>
+
+    <script>
+        var myVideo = document.getElementById("video"); 
+        
+        function play() { 
+            confetti({
+                particleCount:250,
+                spread:180,
+                origin:{y:0.6}
+            });
+
+            if (myVideo.paused) 
+                myVideo.play();
+        }
+    </script>
+</body>
+</html>
